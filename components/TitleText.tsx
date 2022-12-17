@@ -1,10 +1,10 @@
-import { text } from "stream/consumers";
 import { useRouter } from 'next/router';
 
 interface TitleTextProps {
 	text: string;
 	linkUrl: string;
 	isLogo?: boolean;
+  isSelected?: string;
 }
 
 export default function TitleText(props: TitleTextProps) {
@@ -28,10 +28,18 @@ export default function TitleText(props: TitleTextProps) {
 		return ret;
 	}
 
+  const handleClass = () => {
+    let retClassName = "align-middle";
+    if (props.isSelected?.toLowerCase() === props.text.toLowerCase()) {
+      retClassName += " underline";
+    }
+    return retClassName;
+  }
+
 
 	return (
 	<div className={handleIsLogo()}>
-		<button className="align-middle"onClick={handleClick}>
+		<button className={handleClass()} onClick={handleClick}>
 		{props.text}
 		</button>
 	</div>

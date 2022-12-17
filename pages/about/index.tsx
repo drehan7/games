@@ -1,4 +1,8 @@
+import Header from "../../components/Header";
 
 export default function About() {
-	return (<h1>ABOUT PAGE</h1>)
+  return (
+    <Header isSelected="About" />
+  )
+
 }

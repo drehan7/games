@@ -1,5 +1,8 @@
-export default function SignUp() {
+import Header from "../../components/Header";
+
+
+export default function Signup() {
     return (
-        <h1>SIGN UP PAGE</h1>
+      <Header isSelected="Sign up"/>
     )
 }
